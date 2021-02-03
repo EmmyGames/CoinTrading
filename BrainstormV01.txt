@@ -1,7 +1,11 @@
 Brainstorm Crypto Trading Algorithm:
 
 Goal:
-Passively accumulate the amount of coins without putting down more money.
+Make a long-term trading bot that performs better than just holding would.
+Theory:
+Do so by passively accumulate the amount of coins without putting down more money.
+
+
 
 Given:
 1. Must always have some amount of coins and some amount of USD in wallet
@@ -13,14 +17,27 @@ Assumptions:
 Buy low, sell high 100% of the time will increase the amount of coins.
 
 
-Questions:
-Lowering the average price per coin bought will increase the amount of coins?
-Does this mean that increasing the average price per coin will hurt?
-
-
-
 Hypothetically, the lower the price goes, the more amount should be bought
 But if we are to never run out of USD and coins, this poses a potential problem
 The larger amount bought and sold at once, the higher the risk/reward.
 The larger the amount allows the ability to accumulate coins faster but has a higher risk of buying/selling too early
 and/or running out of USD or coins.
+
+
+Potential Premise:
+Always sell higher than bought and always buy lower than sold. (excluding the first purchase).
+
+
+Rough Rules:
+Put half of USD into a volatile coin of choice. (maybe LTC)
+If the price is greater than x% above the average buy price, sell y%
+If the price is greater than x% below the average sell price (or the average buy price), buy y%
+
+
+How to calculate the % bought or sold???
+The higher the difference in price compared to avg sell/buy, the more that should be bought/sold.
+No matter what the formula is, there is always a possibility that one currency will run out and
+the trading will get stuck if the price goes very high or very low and then stagnates.
+
+
+What if the trading was done 3 ways rather than 2? (BTC, LTC, USD)
